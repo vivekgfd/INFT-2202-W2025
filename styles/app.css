@@ -1,0 +1,12 @@
+/* styles/app.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
