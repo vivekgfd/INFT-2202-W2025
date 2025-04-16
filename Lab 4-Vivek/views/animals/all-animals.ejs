@@ -1,0 +1,28 @@
+<%- include('../partials/title') %>
+    <h1>All Animals</h1>
+    <div class="row">
+        <% animals.forEach(animal => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= animal.name %></h5>
+                        <p class="card-text">
+                            <strong>Species:</strong> <%= animal.species %><br>
+                            <strong>Age:</strong> <%= animal.age %><br>
+                            <strong>Description:</strong> <%= animal.description %>
+                        </p>
+                        <div class="btn-group">
+                            <a href="/animals/<%= animal._id %>/edit" class="btn btn-primary">Edit</a>
+                            <form action="/animals/<%= animal._id %>?_method=DELETE" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

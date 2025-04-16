@@ -1,0 +1,29 @@
+<%- include('../partials/title') %>
+    <h1>Edit Animal</h1>
+    <% if (typeof error !== 'undefined') { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form action="/animals/<%= animal._id %>?_method=PUT" method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= animal.name %>" required>
+        </div>
+        <div class="mb-3">
+            <label for="species" class="form-label">Species</label>
+            <input type="text" class="form-control" id="species" name="species" value="<%= animal.species %>" required>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" name="age" value="<%= animal.age %>" required min="0">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3"><%= animal.description %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Animal</button>
+        <a href="/animals" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
